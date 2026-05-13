@@ -9,6 +9,7 @@ description = "A local AI-agent orchestration project for managing coding tasks.
 requires-python = ">=3.11"
 dependencies = [
     "fastapi",
+    "pydantic-settings",
     "uvicorn[standard]",
 ]
 

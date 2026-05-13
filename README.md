@@ -17,6 +17,24 @@ Install the project with development dependencies:
 pip install -e ".[dev]"
 ```
 
+## Configuration
+
+Local configuration is managed through environment variables. Create a local
+`.env` file from the example file:
+
+```bash
+cp .env.example .env
+```
+
+Supported variables:
+
+- `APP_ENV`: application environment, defaults to `local`
+- `DATABASE_URL`: database connection URL, empty by default
+- `API_PREFIX`: API route prefix, defaults to `/api/v1`
+- `LOG_LEVEL`: application log level, defaults to `INFO`
+
+The `.env` file is for local configuration and must not be committed.
+
 ## Run Backend
 
 Start the backend with reload enabled:
@@ -55,11 +73,14 @@ ruff check .
 .
 ├── pyproject.toml
 ├── README.md
+├── .env.example
 ├── src/
 │   └── agent4ge/
 │       ├── __init__.py
 │       ├── __main__.py
+│       ├── config.py
 │       └── main.py
 └── tests/
+    ├── test_config.py
     └── test_smoke.py
 ```
