@@ -17,19 +17,25 @@ Install the project with development dependencies:
 pip install -e ".[dev]"
 ```
 
-## Run
+## Run Backend
 
-Run as a module:
+Start the backend with reload enabled:
+
+```bash
+uvicorn agent4ge.main:app --reload
+```
+
+Or start it through the package module:
 
 ```bash
 python -m agent4ge
 ```
 
-Run the console command after installing:
+OpenAPI documentation is available through FastAPI defaults:
 
-```bash
-agent4ge
-```
+- Health check: http://127.0.0.1:8000/health
+- Swagger UI: http://127.0.0.1:8000/docs
+- OpenAPI JSON: http://127.0.0.1:8000/openapi.json
 
 ## Test
 

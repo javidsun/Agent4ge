@@ -1,8 +1,8 @@
-def main() -> int:
-    """Run the agent4ge application."""
-    print("agent4ge is ready.")
-    return 0
+from fastapi import FastAPI
+
+app = FastAPI(title="agent4ge", version="0.1.0")
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+@app.get("/health")
+def health() -> dict[str, str]:
+    return {"status": "ok"}

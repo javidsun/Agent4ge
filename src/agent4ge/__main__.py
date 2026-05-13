@@ -1,3 +1,9 @@
-from agent4ge.main import main
+import uvicorn
 
-raise SystemExit(main())
+
+def main() -> None:
+    uvicorn.run("agent4ge.main:app", host="127.0.0.1", port=8000)
+
+
+if __name__ == "__main__":
+    main()
